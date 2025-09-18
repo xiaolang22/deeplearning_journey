@@ -1,4 +1,4 @@
-### 总体说明
+### 项目总体说明
 
    该任务在windows环境下开发并运行，故使用.bat批处理文件启动。
 
@@ -34,13 +34,13 @@
 
 #### 1、安装并配置anaconda/miniconda   
 
-   创建与系统隔离的虚拟环境，并提供更强大的包管理器conda
+   主要作用是创建与系统隔离的虚拟环境，并提供比pip更强大的包管理器conda
 
 #### 2、安装cuda                                      
 
    cuda是一个英伟达开发的，支持基于英伟达gpu进行软件开发的平台。用于使用gpu加速训练模型。
 
-   需要了解gpu型号、gpu驱动版本，cuda版本与gpu驱动版本相关。
+   安装cuda，需要了解自己电脑的gpu型号、gpu驱动版本，因为cuda版本与gpu驱动版本相关。选择安装版本的原则是：安装的cuda版本要 <= gpu对cuda的最高支持版本。下面是此步骤常用的一些命令。
 
    查看cuda支持最高版本：
 
@@ -64,13 +64,13 @@ nvcc --version
 
 	可以使用pytorch框架进行神经网络开发，并支持使用gpu加速。
 
-（2）pytorch安装选择cuda时选择比目前安装的cuda版本更低的版本   
+（2）pytorch安装选择cuda时选择比目前电脑安装的cuda版本更低的版本   
 
- 	电脑上安装的cuda是本地cuda，pytorch构建版本是用cuda预编译的，cuda具有向下兼容特性。
+ 	因为电脑上安装的cuda是本地cuda，pytorch构建版本是用cuda预编译的，cuda具有向下兼容特性。
 
 （3）判断pytorch是否安装成功，并能正常使用gpu。
 
-	 启动一个python编辑器，运行：
+	 在配置好的虚拟环境下启动一个python控制台或启动jupyter notebook，运行：
 
 ```python
 
@@ -79,20 +79,38 @@ import torch
 torch.cuda.is_available()
 
 ```
+如果返回True，则代表pytorch安装成功并能正常使用GPU。
 
 #### 5、其他小工具
 
-tensorboard（1.1.0版本以上），用于可视化数据。可选，已经默认取消，防止没安装导致报错。  
+tensorboard（1.1.0版本以上），用于可视化数据。可选，已经默认注释掉相关代码，防止没安装导致代码运行报错，如果需要此功能，可以自行取消注释相关代码。  
+安装tensorboard的相关命令如下。
+安装tensorboard：
+```
+pip install tensorboard
+```
+如果安装后运行cnn_train.py显示tensorboard版本过低，则运行以下命令升级tensorboard：
+```
+pip install --upgrade tensorboard
+```
+如果还是显示版本过低，则使用以下命令安装指定版本的tensorboard：
+```
+pip install tensorboard==<版本号>
+```
+可以使用如下两种方法查看tensorboard版本：
+```
+pip list				# 方法一，使用pip包管理器，找到tensorboard，看后面的版本号
+tensorboard --version	# 方法二，使用tensorboard命令
+```
 
 
-注意：下述所有步骤都必须在配置好的虚拟环境中进行！！！！
+## 注意：下述所有步骤都必须在配置好的虚拟环境中进行！！！！
 
   
 
 ### 模型训练  
-默认训练50轮。
 
-   在任务根目录下，启动cmd，运行以下命令进行模型训练：
+   在任务根目录下，启动cmd，运行以下命令进行模型训练，模型默认训练50轮，请耐心等待:)
 
 ```
 
@@ -112,7 +130,7 @@ python classify.py ./classify_images/dog.png
 
 ```
 
-   命令行参数为要识别的图片路径，默认是小狗图片的路径。
+   命令行参数为要识别的图片路径，可以在classify_images文件夹中自行选择，但test.bat中默认指定的是小狗图片的路径。
 
    
 
@@ -121,7 +139,7 @@ python classify.py ./classify_images/dog.png
    在任务根目录下，启动cmd，依次运行以下命令完成模型训练+默认图片识别：
 
 ```
-conda activate torch(虚拟环境名称)
+conda activate <虚拟环境名称>
 test.bat
 
 ```
