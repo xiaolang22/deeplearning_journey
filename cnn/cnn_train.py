@@ -13,7 +13,7 @@
 import torch
 from torch.utils.data import DataLoader         #用于加载数据（对数据分批）
 from torchvision import transforms, datasets    #用于加载数据（下载并解析数据）
-from torch.utils.tensorboard import SummaryWriter #用于检验数据加载是否正确
+# from torch.utils.tensorboard import SummaryWriter #用于检验数据加载是否正确
 import torch.nn as nn               #用于构建神经网络（骨架结构、损失函数）
 import torch.nn.functional as F     #用于构建神经网络（骨架结构：激活函数）
 from torch import optim             #用于构建神经网络（优化器）
@@ -63,22 +63,22 @@ print("测试数据集长度：{}".format(test_length))
 print("训练数据集批次数量：{}".format(train_batch_num))
 print("测试数据集批次数量：{}".format(test_batch_num))
 
-# （2）通过tensorboard查看每一个batch（如果没安装tensorboard，可以注释下面这一段，同时注释from torch.utils.tensorboard import SummaryWriter）
-# 命令行输入 tensorboard --logdir=data_loaded 自动打开
-print("（2）通过tensorboard查看每一个batch")
-print("PS：等待运行完成后，通过命令行输入 tensorboard --logdir=data_loaded 自动打开")
-writer = SummaryWriter("data_loaded")
-step = 0
-for data in train_loader:    # 验证训练集数据
-    images,targets = data
-    writer.add_images(tag="train_data",img_tensor=images,global_step=step)
-    step = step + 1
-step = 0
-for data in test_loader:     # 验证测试集数据
-    images, targets = data
-    writer.add_images(tag="test_data", img_tensor=images, global_step=step)
-    step = step + 1
-writer.close()
+# # （2）通过tensorboard查看每一个batch（如果没安装tensorboard，可以注释下面这一段，同时注释from torch.utils.tensorboard import SummaryWriter）
+# # 命令行输入 tensorboard --logdir=data_loaded 自动打开
+# print("（2）通过tensorboard查看每一个batch")
+# print("PS：等待运行完成后，通过命令行输入 tensorboard --logdir=data_loaded 自动打开")
+# writer = SummaryWriter("data_loaded")
+# step = 0
+# for data in train_loader:    # 验证训练集数据
+#     images,targets = data
+#     writer.add_images(tag="train_data",img_tensor=images,global_step=step)
+#     step = step + 1
+# step = 0
+# for data in test_loader:     # 验证测试集数据
+#     images, targets = data
+#     writer.add_images(tag="test_data", img_tensor=images, global_step=step)
+#     step = step + 1
+# writer.close()
 
 ################## 2.构建神经网络（骨架&损失函数&优化器） ##################
 print("2.开始构建神经网络")
