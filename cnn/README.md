@@ -104,7 +104,7 @@ tensorboard --version	# 方法二，使用tensorboard命令
 ```
 
 
-## 运行脚本说明  注意：下述所有步骤都必须在配置好的虚拟环境中进行！！！！
+## 运行脚本说明      注意：下述所有步骤都必须在配置好的虚拟环境中进行！！！！
 
   
 
@@ -148,23 +148,23 @@ test.bat
 
 #### 第一阶段：CRAIC备赛期间
 先通过跑通yolo学习了环境配置和神经网络的基本训练和预测流程。
-此阶段主要参考：
+此阶段主要参考：  
 【【手把手带你实战YOLOv8-入门篇】YOLOv8 环境安装】https://www.bilibili.com/video/BV13V4y1S7MK?vd_source=a19ac0154761b57ad9bec82c8ee738ff
 
 #### 第二阶段 RM视觉组笔试题（进阶版）task6 CNN试题
-先通过快速教程简单了解构建CNN网络的大体流程和任务量，此阶段主要参考b站视频：
-BV1mw4m1a7Xu
-BV11Z421K7BU
+先通过快速教程简单了解构建CNN网络的大体流程和任务量，此阶段主要参考b站视频：  
+BV1mw4m1a7Xu  
+BV11Z421K7BU  
 （上述两个是bv号）
 
-然后通过详细教程详细了解技术细节，并尝试自己手敲代码。此阶段的参考资料如下：
-（视频）
-【PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】】https://www.bilibili.com/video/BV1hE411t7RN?p=7&vd_source=a19ac0154761b57ad9bec82c8ee738ff
-（博客）
+然后通过详细教程详细了解技术细节，并尝试自己手敲代码。此阶段的参考资料如下：  
+（视频）  
+【PyTorch深度学习快速入门教程（绝对通俗易懂！）【小土堆】】https://www.bilibili.com/video/BV1hE411t7RN?p=7&vd_source=a19ac0154761b57ad9bec82c8ee738ff  
+（博客）  
 【完全新手向教学--基于PyTorch的CIFAR10图像CNN识别终极教程（暨up主：我是土堆 课程总结，可以作为刷新印象之用）】
-https://blog.csdn.net/Nakkhon/article/details/150415803?fromshare=blogdetail&sharetype=blogdetail&sharerId=150415803&sharerefer=PC&sharesource=2301_79513991&sharefrom=from_link
+https://blog.csdn.net/Nakkhon/article/details/150415803?fromshare=blogdetail&sharetype=blogdetail&sharerId=150415803&sharerefer=PC&sharesource=2301_79513991&sharefrom=from_link  
 【CIFAR10分类任务---pytorch---CNN---入门（简单）分类任务】
-https://blog.csdn.net/biggerbugger/article/details/114318970?fromshare=blogdetail&sharetype=blogdetail&sharerId=114318970&sharerefer=PC&sharesource=2301_79513991&sharefrom=from_link
+https://blog.csdn.net/biggerbugger/article/details/114318970?fromshare=blogdetail&sharetype=blogdetail&sharerId=114318970&sharerefer=PC&sharesource=2301_79513991&sharefrom=from_link  
 【pytorch利用卷积神经网络进行CIFAR-10图像分类】
 https://yunxingluoyun.blog.csdn.net/article/details/106245489?fromshare=blogdetail&sharetype=blogdetail&sharerId=106245489&sharerefer=PC&sharesource=2301_79513991&sharefrom=from_link
 
